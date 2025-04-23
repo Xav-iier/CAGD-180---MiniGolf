@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/* Xavier Poston
+ * This script allows the golf ball to move around
+ * First Updated: 4/23/25
+ * Last Updated: 4/23/25
+ */
+
 public class BallController : MonoBehaviour
 {
     public GameObject golfBall;
@@ -19,7 +25,7 @@ public class BallController : MonoBehaviour
     }
     void FixedUpdate()
     {
-        Move();
+       // Move();
     }
     private void Move()
     {

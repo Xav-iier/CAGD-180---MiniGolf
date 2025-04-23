@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/* Xavier Poston
+ * This script allows the camera to follow the golf ball 
+ * First Updated: 4/23/25
+ * Last Updated: 4/23/25
+ */
+
 public class CameraFollow : MonoBehaviour
 {
     public Transform target;

@@ -1,7 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.ProBuilder;
 using UnityEngine.UI;
+
+/* Xavier Poston & Joshua Holdenried
+ * This script allows the club to move around, when hitting the golf ball
+ * First Updated: 4/23/25
+ * Last Updated: 4/23/25
+ */
 
 public class ClubController : MonoBehaviour
 {
@@ -34,6 +41,16 @@ public class ClubController : MonoBehaviour
     }
     void Update()
     {
+        
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.RotateAround(ballRb.position, Vector3.up, rotationSpeed);
+        }
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.RotateAround(ballRb.position, Vector3.down, rotationSpeed);
+        }
 
         // Start charging on Space key down
         if (Input.GetKeyDown(KeyCode.Space) && BallIsStationary())
@@ -79,7 +96,9 @@ public class ClubController : MonoBehaviour
         isCharging = false;
         powerCharge = 0f;
         UpdatePowerUI();
-       
+
+        StartCoroutine(StopBall());
+
         // Start checking when ball stops
         StartCoroutine(WaitForBallToStop());
     }
@@ -142,6 +161,16 @@ public class ClubController : MonoBehaviour
 
         }
     }
+
+    private IEnumerator StopBall()
+    {
+        // Start the timer to wait
+        print("Timer Started");
+        yield return new WaitForSeconds(5);
+        print("Timer Ended");
+        ballRb.velocity = Vector3.zero;
+    }
+
     bool BallIsStationary()
     {
         return ballRb.velocity.magnitude < 0.05f;
