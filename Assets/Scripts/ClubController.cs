@@ -23,6 +23,7 @@ public class ClubController : MonoBehaviour
     private float powerCharge = 0f;
     private bool isCharging = false;
 
+
     public CameraFollow camFollow;
     public Transform ballTransform;
     public Transform clubTransform;
@@ -65,7 +66,7 @@ public class ClubController : MonoBehaviour
             powerCharge += chargeSpeed * Time.deltaTime;
             powerCharge = Mathf.Clamp(powerCharge, 0f, maxPower);
             UpdatePowerUI();
-            AnimateClubBack();
+            //AnimateClubBack();
         }
 
         // Release Space to swing
