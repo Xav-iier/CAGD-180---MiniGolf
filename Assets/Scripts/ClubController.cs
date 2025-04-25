@@ -66,12 +66,11 @@ public class ClubController : MonoBehaviour
             powerCharge += chargeSpeed * Time.deltaTime;
             powerCharge = Mathf.Clamp(powerCharge, 0f, maxPower);
             UpdatePowerUI();
-<<<<<<< Updated upstream
+
             //AnimateClubBack();
-=======
-          
->>>>>>> Stashed changes
+
         }
+
 
         // Release Space to swing
         if (Input.GetKeyUp(KeyCode.Space) && isCharging)
