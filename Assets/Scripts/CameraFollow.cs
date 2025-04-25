@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+
 
 /* Xavier Poston
  * This script allows the camera to follow the golf ball 
@@ -11,18 +13,25 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     public Transform target;
-    public float smoothSpeed = 5f;
+    public float Speed = 5f;
     public Vector3 offset;
+     public bool followRotation = true;
 
     void LateUpdate()
     {
         if (target != null)
         {
-            Vector3 desiredPosition = target.position + offset;
-            Vector3 smoothed = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
-            transform.position = smoothed;
+            // Move the camera to follow target position and the offset
+            Vector3 desiredPosition = target.position + target.rotation * offset;
+            Vector3 betterPosition = Vector3.Lerp(transform.position, desiredPosition, Speed * Time.deltaTime);
+            transform.position = betterPosition;
 
-            transform.LookAt(target); // look at ball or club
+            // Rotate with the target
+            if (followRotation)
+            {
+                Quaternion desiredRotation = Quaternion.LookRotation(target.forward);
+                transform.rotation = Quaternion.Slerp(transform.rotation, desiredRotation, Speed * Time.deltaTime);
+            }
         }
     }
 
@@ -31,3 +40,8 @@ public class CameraFollow : MonoBehaviour
         target = newTarget;
     }
 }
+
+
+
+
+

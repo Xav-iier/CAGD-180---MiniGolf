@@ -66,13 +66,18 @@ public class ClubController : MonoBehaviour
             powerCharge += chargeSpeed * Time.deltaTime;
             powerCharge = Mathf.Clamp(powerCharge, 0f, maxPower);
             UpdatePowerUI();
+<<<<<<< Updated upstream
             //AnimateClubBack();
+=======
+          
+>>>>>>> Stashed changes
         }
 
         // Release Space to swing
         if (Input.GetKeyUp(KeyCode.Space) && isCharging)
         {
             Swing();
+            AnimateClubBack();
         }
     }
 
@@ -84,21 +89,22 @@ public class ClubController : MonoBehaviour
             Vector3 swingDirection = club.forward;
             ballRb.AddForce(swingDirection * powerCharge, ForceMode.Impulse);
         }
-
+       
         if (camFollow != null)
         {
+            camFollow.followRotation = false;
             camFollow.SetTarget(ballTransform);
         }
 
        
         // Animate club back to default
-        StartCoroutine(ResetSwingAnimation());
+      //  StartCoroutine(ResetSwingAnimation());
 
         isCharging = false;
         powerCharge = 0f;
         UpdatePowerUI();
 
-        StartCoroutine(StopBall());
+        //StartCoroutine(StopBall());
 
         // Start checking when ball stops
         StartCoroutine(WaitForBallToStop());
@@ -138,7 +144,7 @@ public class ClubController : MonoBehaviour
             powerSlider.value = powerCharge / maxPower;
         }
     }
-    // NEW: Waits for the ball to stop moving, then resets
+    // Waits for the ball to stop moving, then resets
     IEnumerator WaitForBallToStop()
     {
         yield return new WaitForSeconds(0.5f); // small delay before checking
@@ -148,14 +154,21 @@ public class ClubController : MonoBehaviour
             yield return null;
         }
 
-        // Ball has stopped — move club to ball position
-        clubTransform.position = ballTransform.position;
+      
+        // Get the direction the club was last facing (used to determine back offset)
+        Vector3 backDirection = -transform.forward;
 
-        // NEW: Reset ball physics
+        // Offset the club slightly behind the ball
+        float clubOffsetDistance = 1f; //(1f = 1 meter back)
+        Vector3 offsetPosition = ballTransform.position + backDirection * clubOffsetDistance;
+
+        clubTransform.position = offsetPosition;
+
+        //  Reset ball physics
         ballRb.isKinematic = true;
         ballRb.velocity = Vector3.zero;
 
-        // NEW: Switch camera back to club
+        // Switch camera back to club
         if (camFollow != null)
         {
             camFollow.SetTarget(clubTransform);
