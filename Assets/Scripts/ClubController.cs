@@ -148,20 +148,42 @@ public class ClubController : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f); // small delay before checking
 
-        while (ballRb.velocity.magnitude > 0.05f)
+        float stillTime = 0f;
+        float requiredStillTime = 1f;
+
+        while (stillTime < requiredStillTime)
         {
+            if (ballRb.velocity.magnitude < 0.05f)
+            {
+                stillTime += Time.deltaTime;
+            }
+            else
+            {
+                stillTime = 0f;
+            }
+
             yield return null;
         }
 
-      
-        // Get the direction the club was last facing (used to determine back offset)
+        // Ball has stopped — move club behind the ball
         Vector3 backDirection = -transform.forward;
-
-        // Offset the club slightly behind the ball
-        float clubOffsetDistance = 1f; //(1f = 1 meter back)
+        float clubOffsetDistance = 1f;
         Vector3 offsetPosition = ballTransform.position + backDirection * clubOffsetDistance;
-
         clubTransform.position = offsetPosition;
+
+        // Reset ball physics
+        ballRb.velocity = Vector3.zero;
+        ballRb.angularVelocity = Vector3.zero;
+        ballRb.isKinematic = true;
+
+        // Switch camera back to club
+        if (camFollow != null)
+        {
+            camFollow.followRotation = true;
+            camFollow.SetTarget(clubTransform);
+            camFollow.SnapBehindTarget(6f, 4f); //  Only snap once club is the target
+        }
+
 
         //  Reset ball physics
         ballRb.isKinematic = true;

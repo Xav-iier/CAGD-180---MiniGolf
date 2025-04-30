@@ -2,36 +2,50 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 
 /* Xavier Poston
  * This script allows the camera to follow the golf ball 
  * First Updated: 4/23/25
- * Last Updated: 4/23/25
+ * Last Updated: 4/29/25
  */
 
 public class CameraFollow : MonoBehaviour
 {
     public Transform target;
-    public float Speed = 5f;
-    public Vector3 offset;
-     public bool followRotation = true;
+    public float followSpeed = 5f;
+    public float rotateSpeed = 5f;
+    public bool followRotation = true;
+
+    public Vector3 clubOffset = new Vector3(0, 4, -6);
+    public Vector3 ballOffset = new Vector3(0, 5, -8);
+
+    private Vector3 currentOffset;
 
     void LateUpdate()
     {
-        if (target != null)
-        {
-            // Move the camera to follow target position and the offset
-            Vector3 desiredPosition = target.position + target.rotation * offset;
-            Vector3 betterPosition = Vector3.Lerp(transform.position, desiredPosition, Speed * Time.deltaTime);
-            transform.position = betterPosition;
+        if (target == null) return;
 
-            // Rotate with the target
-            if (followRotation)
-            {
-                Quaternion desiredRotation = Quaternion.LookRotation(target.forward);
-                transform.rotation = Quaternion.Slerp(transform.rotation, desiredRotation, Speed * Time.deltaTime);
-            }
+        currentOffset = followRotation ? clubOffset : ballOffset;
+
+        Vector3 desiredPosition;
+
+        if (followRotation)
+        {
+            desiredPosition = target.position + target.rotation * currentOffset;
+        }
+        else
+        {
+            desiredPosition = target.position + currentOffset;
+        }
+
+        transform.position = Vector3.Lerp(transform.position, desiredPosition, followSpeed * Time.deltaTime);
+
+        if (followRotation)
+        {
+            Quaternion targetRot = Quaternion.LookRotation(target.forward);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, rotateSpeed * Time.deltaTime);
         }
     }
 
@@ -39,7 +53,17 @@ public class CameraFollow : MonoBehaviour
     {
         target = newTarget;
     }
+
+    // Call this when switching to the club to realign the camera
+    public void SnapBehindTarget(float distanceBack = 6f, float height = 4f)
+    {
+        if (target == null) return;
+
+        Vector3 backOffset = -target.forward * distanceBack + Vector3.up * height;
+        clubOffset = Quaternion.Inverse(target.rotation) * backOffset;
+    }
 }
+
 
 
 
