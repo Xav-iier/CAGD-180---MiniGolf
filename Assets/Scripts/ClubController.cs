@@ -181,7 +181,7 @@ public class ClubController : MonoBehaviour
         {
             camFollow.followRotation = true;
             camFollow.SetTarget(clubTransform);
-            camFollow.SnapBehindTarget(6f, 4f); //  Only snap once club is the target
+            camFollow.SnapBehindTarget(3, 1); //  Only snap once club is the target
         }
 
 

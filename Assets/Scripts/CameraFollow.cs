@@ -18,7 +18,7 @@ public class CameraFollow : MonoBehaviour
     public float rotateSpeed = 5f;
     public bool followRotation = true;
 
-    public Vector3 clubOffset = new Vector3(0, 4, -6);
+    public Vector3 clubOffset = new Vector3(0, 1, 6);
     public Vector3 ballOffset = new Vector3(0, 5, -8);
 
     private Vector3 currentOffset;
@@ -55,7 +55,7 @@ public class CameraFollow : MonoBehaviour
     }
 
     // Call this when switching to the club to realign the camera
-    public void SnapBehindTarget(float distanceBack = 6f, float height = 4f)
+    public void SnapBehindTarget(float distanceBack = 6, float height = 1)
     {
         if (target == null) return;
 
