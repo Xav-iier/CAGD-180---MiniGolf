@@ -5134,6 +5134,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3941873532814753990, guid: ac12c8222c8e8ad4391e7c663d461260, type: 3}
+      propertyPath: followSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3941873532814753990, guid: ac12c8222c8e8ad4391e7c663d461260, type: 3}
+      propertyPath: ballOffset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3941873532814753990, guid: ac12c8222c8e8ad4391e7c663d461260, type: 3}
+      propertyPath: ballOffset.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3941873532814753990, guid: ac12c8222c8e8ad4391e7c663d461260, type: 3}
+      propertyPath: ballOffset.z
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3941873532814753990, guid: ac12c8222c8e8ad4391e7c663d461260, type: 3}
+      propertyPath: clubOffset.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3941873532814753990, guid: ac12c8222c8e8ad4391e7c663d461260, type: 3}
+      propertyPath: clubOffset.z
+      value: -3
+      objectReference: {fileID: 0}
     - target: {fileID: 6192148288827620976, guid: ac12c8222c8e8ad4391e7c663d461260, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.32808435
@@ -5174,6 +5198,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6377402099074711735, guid: ac12c8222c8e8ad4391e7c663d461260, type: 3}
+      propertyPath: ballRb
+      value: 
+      objectReference: {fileID: 959702757}
+    - target: {fileID: 6377402099074711735, guid: ac12c8222c8e8ad4391e7c663d461260, type: 3}
+      propertyPath: maxPower
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 6377402099074711735, guid: ac12c8222c8e8ad4391e7c663d461260, type: 3}
+      propertyPath: powerSlider
+      value: 
+      objectReference: {fileID: 701714051}
     - target: {fileID: 6377402099074711735, guid: ac12c8222c8e8ad4391e7c663d461260, type: 3}
       propertyPath: ballTransform
       value: 
@@ -7281,6 +7317,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &959702757 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 6217986860754918167, guid: 01f3c4cd5fc2d984a81af50bfef7a6c3, type: 3}
+  m_PrefabInstance: {fileID: 358806124}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &971046688
 PrefabInstance:
   m_ObjectHideFlags: 0

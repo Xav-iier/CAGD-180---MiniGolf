@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.ProBuilder;
@@ -165,7 +165,7 @@ public class ClubController : MonoBehaviour
             yield return null;
         }
 
-        // Ball has stopped � move club behind the ball
+        // Ball has stopped — move club behind the ball
         Vector3 backDirection = -transform.forward;
         float clubOffsetDistance = 1f;
         Vector3 offsetPosition = ballTransform.position + backDirection * clubOffsetDistance;
