@@ -15,7 +15,7 @@ public class Hole : MonoBehaviour
         }
         if (other.CompareTag("Ball"))
         {
-            StartCoroutine(LoadNextSceneAfterDelay(1f));
+            StartCoroutine(LoadNextSceneAfterDelay(3f));
         }
     }
   

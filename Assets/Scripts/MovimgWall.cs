@@ -50,16 +50,18 @@ public class MovimgWall : MonoBehaviour
         isMoving = true;
     }
 
+   
     private void OnCollisionEnter(Collision collision)
     {
         // Check if the colliding object has the target tag
         if (collision.gameObject.CompareTag(targetTag))
         {
-            // Destroy the golf ball
-            Destroy(collision.gameObject);
-
-            // add game over or score updates here
-         print("Golf ball destroyed!");  
+            // Instead of destroying the ball, call the LoseLife method
+            BallController ballController = collision.gameObject.GetComponent<BallController>();
+            if (ballController != null)
+            {
+                ballController.LoseLife();
+            }
         }
     }
 }

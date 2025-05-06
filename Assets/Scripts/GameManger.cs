@@ -1,21 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameManger : MonoBehaviour
 {
-    public int score = 0;
-    //public Text scoreText;
+   
+        public int lives = 3;
+        public TextMeshProUGUI livesText;
 
-    public void AddScore()
-    {
-        score++;
-       // UpdateScoreUI();
-    }
+        private void Start()
+        {
+            UpdateLivesUI(); // Ensure UI updates at game start
+        }
 
-   // void UpdateScoreUI()
- //   {
-       // if (scoreText != null)
-         //   scoreText.text = "Score: " + score;
-  //  }
+        public void LoseLife()
+        {
+            if (lives > 0)
+            {
+                lives--;
+                UpdateLivesUI(); // Update UI whenever lives decrease
+            }
+        }
+        public void AddLife()
+        {
+            lives++;
+            UpdateLivesUI();
+        }
+
+        private void UpdateLivesUI()
+        {
+            if (livesText != null)
+            {
+                livesText.text = "Lives: " + lives;
+            }
+        }
 }
+
+

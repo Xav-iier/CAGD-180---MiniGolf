@@ -28,6 +28,8 @@ public class ClubController : MonoBehaviour
     public Transform ballTransform;
     public Transform clubTransform;
 
+    public GameManger gameManager;
+
     // Swing animation
     public float maxSwingBackAngle = 60f; // Maximum angle the club swings back
 
