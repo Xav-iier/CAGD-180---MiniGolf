@@ -10,14 +10,13 @@ public class EndScreen : MonoBehaviour
     {
         Application.Quit();
     }
-
     public void MainMenu(int sceneIndex)
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
     public void Again(int sceneIndex)
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
     public void LevelSelect(int sceneIndex)
     {
