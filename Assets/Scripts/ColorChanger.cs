@@ -11,8 +11,26 @@ using UnityEngine;
 public class ColorChanger : MonoBehaviour
 {
     public GameObject golfball; 
+    public Color ColorRed;
+    public Color ColorOrange;
+    public Color ColorYellow;
+    public Color ColorGreen;
+    public Color ColorBlue;
+    public Color ColorPurple;
     public Color ColorPink;
-    
+    public Color ColorWhite;
+    public Color ColorGray;
+    public Color ColorBlack;
+    public bool red = false;
+    public bool orange = false;
+    public bool yellow = false;
+    public bool green = false;
+    public bool blue = false;
+    public bool purple = false;
+    public bool pink = false;
+    public bool white = false;
+    public bool gray = false;
+    public bool black = false;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +45,109 @@ public class ColorChanger : MonoBehaviour
     }
 
 
-    public void ChangeMaterialColor()
+    public void Red()
+    {
+        if (golfball != null)
+        {
+            Renderer targetRenderer = golfball.GetComponent<Renderer>();
+
+            if (targetRenderer != null && targetRenderer.material != null)
+            {
+                targetRenderer.material.color = ColorRed;
+                red = true;
+            }
+            else
+            {
+                print("Can Not Change Color");
+            }
+        }
+    }
+    public void Orange()
+    {
+        if (golfball != null)
+        {
+            Renderer targetRenderer = golfball.GetComponent<Renderer>();
+
+            if (targetRenderer != null && targetRenderer.material != null)
+            {
+                targetRenderer.material.color = ColorOrange;
+                orange = true;
+            }
+            else
+            {
+                print("Can Not Change Color");
+            }
+        }
+    }
+    public void Yellow()
+    {
+        if (golfball != null)
+        {
+            Renderer targetRenderer = golfball.GetComponent<Renderer>();
+
+            if (targetRenderer != null && targetRenderer.material != null)
+            {
+                targetRenderer.material.color = ColorYellow;
+                yellow = true;
+            }
+            else
+            {
+                print("Can Not Change Color");
+            }
+        }
+    }
+     public void Green()
+    {
+        if (golfball != null)
+        {
+            Renderer targetRenderer = golfball.GetComponent<Renderer>();
+
+            if (targetRenderer != null && targetRenderer.material != null)
+            {
+                targetRenderer.material.color = ColorGreen;
+                green = true;
+            }
+            else
+            {
+                print("Can Not Change Color");
+            }
+        }
+    }
+    public void Blue()
+    {
+        if (golfball != null)
+        {
+            Renderer targetRenderer = golfball.GetComponent<Renderer>();
+
+            if (targetRenderer != null && targetRenderer.material != null)
+            {
+                targetRenderer.material.color = ColorBlue;
+                blue = true;
+            }
+            else
+            {
+                print("Can Not Change Color");
+            }
+        }
+    }
+    public void Purple()
+    {
+        if (golfball != null)
+        {
+            Renderer targetRenderer = golfball.GetComponent<Renderer>();
+
+            if (targetRenderer != null && targetRenderer.material != null)
+            {
+                targetRenderer.material.color = ColorPurple;
+                purple = true;
+            }
+            else
+            {
+                print("Can Not Change Color");
+            }
+        }
+    }
+    public void Pink()
     {
         if (golfball != null)
         {
@@ -36,16 +156,64 @@ public class ColorChanger : MonoBehaviour
             if (targetRenderer != null && targetRenderer.material != null)
             {
                 targetRenderer.material.color = ColorPink;
+                pink = true;
             }
             else
             {
-               print("Can Not Change Color");
+                print("Can Not Change Color");
             }
         }
-       
     }
-    public void Pink()
+    public void White()
     {
-        gameObject.GetComponent<Renderer>().material.color = ColorPink;
+        if (golfball != null)
+        {
+            Renderer targetRenderer = golfball.GetComponent<Renderer>();
+
+            if (targetRenderer != null && targetRenderer.material != null)
+            {
+                targetRenderer.material.color = ColorWhite;
+                white = true;
+            }
+            else
+            {
+                print("Can Not Change Color");
+            }
+        }
     }
+    public void Gray()
+    {
+        if (golfball != null)
+        {
+            Renderer targetRenderer = golfball.GetComponent<Renderer>();
+
+            if (targetRenderer != null && targetRenderer.material != null)
+            {
+                targetRenderer.material.color = ColorGray;
+                gray = true;
+            }
+            else
+            {
+                print("Can Not Change Color");
+            }
+        }
+    }
+    public void Black()
+    {
+        if (golfball != null)
+        {
+            Renderer targetRenderer = golfball.GetComponent<Renderer>();
+
+            if (targetRenderer != null && targetRenderer.material != null)
+            {
+                targetRenderer.material.color = ColorBlack;
+                black = true;
+            }
+            else
+            {
+                print("Can Not Change Color");
+            }
+        }
+    }
+
 }
