@@ -52,7 +52,7 @@ public class BallController : MonoBehaviour
     {
         // Reduce's players lives by 1
         lives--;
-        GameManger.LoseLife();
+        gameManager.LoseLife();
 
         // Check if lives > 0 
         if (lives > 0)

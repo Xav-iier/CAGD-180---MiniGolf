@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class GameManger : MonoBehaviour
 {
-   
         public int lives = 3;
         public TextMeshProUGUI livesText;
 
@@ -22,12 +21,7 @@ public class GameManger : MonoBehaviour
                 UpdateLivesUI(); // Update UI whenever lives decrease
             }
         }
-        public void AddLife()
-        {
-            lives++;
-            UpdateLivesUI();
-        }
-
+     
         private void UpdateLivesUI()
         {
             if (livesText != null)
