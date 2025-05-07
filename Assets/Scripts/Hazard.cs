@@ -9,7 +9,7 @@ public class Hazard : MonoBehaviour
         //check if the player collided with this hazard
         if (collision.gameObject.GetComponent<BallController>())
         {
-            collision.gameObject.GetComponent<BallController>().LoseLife();
+            collision.gameObject.GetComponent<BallController>().KillPlayer();
         }
     }
 
@@ -18,7 +18,7 @@ public class Hazard : MonoBehaviour
     {
         if (other.gameObject.GetComponent<BallController>())
         {
-            other.gameObject.GetComponent < BallController>().LoseLife();
+            other.gameObject.GetComponent < BallController>().KillPlayer();
         }
     }
 

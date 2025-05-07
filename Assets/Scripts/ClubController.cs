@@ -7,7 +7,7 @@ using UnityEngine.UI;
 /* Xavier Poston & Joshua Holdenried
  * This script allows the club to move around, when hitting the golf ball
  * First Updated: 4/23/25
- * Last Updated: 4/23/25
+ * Last Updated: 5/6/25
  */
 
 public class ClubController : MonoBehaviour
@@ -47,12 +47,12 @@ public class ClubController : MonoBehaviour
         
         if (Input.GetKey(KeyCode.A))
         {
-            transform.RotateAround(ballRb.position, Vector3.up, rotationSpeed);
+            transform.RotateAround(ballRb.position, Vector3.down, rotationSpeed);
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            transform.RotateAround(ballRb.position, Vector3.down, rotationSpeed);
+            transform.RotateAround(ballRb.position, Vector3.up, rotationSpeed);
         }
 
         // Start charging on Space key down
@@ -90,7 +90,8 @@ public class ClubController : MonoBehaviour
             Vector3 swingDirection = club.forward;
             ballRb.AddForce(swingDirection * powerCharge, ForceMode.Impulse);
         }
-       
+        gameManager.AddStroke();
+
         if (camFollow != null)
         {
             camFollow.followRotation = false;

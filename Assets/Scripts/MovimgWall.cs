@@ -60,7 +60,7 @@ public class MovimgWall : MonoBehaviour
             BallController ballController = collision.gameObject.GetComponent<BallController>();
             if (ballController != null)
             {
-                ballController.LoseLife();
+                ballController.KillPlayer();
             }
         }
     }

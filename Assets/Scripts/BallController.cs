@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -13,7 +13,7 @@ public class BallController : MonoBehaviour
 {
     public GameObject golfBall;
     public float speed = 5f;
-    public int lives;
+ 
     public float killHeight = -5;
     private Rigidbody rigidbody;
     private Vector3 respawnPoint;
@@ -32,51 +32,32 @@ public class BallController : MonoBehaviour
         // Check if the ball falls below the kill height
         if (transform.position.y < killHeight)
         {
-            LoseLife();
+            KillPlayer();
         }
     }
-    private void Move()
+    
+   
+
+
+
+      public void KillPlayer()
     {
-        
-        if (Input.GetKey(KeyCode.A))
-        {
-            rigidbody.MovePosition(transform.position + (Vector3.left * speed * Time.deltaTime));
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            rigidbody.MovePosition(transform.position + (Vector3.right * speed * Time.deltaTime));
-        }
-       
-    }
-    public void LoseLife()
-    {
-        // Reduce's players lives by 1
-        lives--;
-        gameManager.LoseLife();
+        //  Count this as a penalty stroke (or two, if you prefer) 
+        if (gameManager != null)
+            gameManager.AddStroke();// +1 hit every time the ball is ‘killed’
 
-        // Check if lives > 0 
-        if (lives > 0)
+        // 2  Reset the ball’s physics so it doesn’t roll away immediately 
+        if (rigidbody != null)
         {
-            // Respawn at the last shot position instead of the original respawn point
-            transform.position = lastShotPosition;
-
-            // Reset the ball's velocity to stop any movement
-            if (rigidbody != null)
-            {
-                rigidbody.velocity = Vector3.zero;
-                rigidbody.angularVelocity = Vector3.zero;
-            }
-            // Respawn - Sets the player's position, to the position of the respawn point
-            transform.position = respawnPoint;
-        }
-        else
-        {
-            // Game Over
-            print("Game Over");
-            SceneManager.LoadScene(5);
+            rigidbody.velocity = Vector3.zero;
+            rigidbody.angularVelocity = Vector3.zero;
         }
 
+        // 3️⃣  Respawn at the last shot position
+        transform.position = lastShotPosition;
     }
 
 }
+
+
 

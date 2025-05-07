@@ -1705,7 +1705,7 @@ PrefabInstance:
       objectReference: {fileID: 777728952}
     - target: {fileID: 5878347908735270439, guid: 01f3c4cd5fc2d984a81af50bfef7a6c3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4623.49
+      value: 4623.38
       objectReference: {fileID: 0}
     - target: {fileID: 5878347908735270439, guid: 01f3c4cd5fc2d984a81af50bfef7a6c3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1713,7 +1713,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5878347908735270439, guid: 01f3c4cd5fc2d984a81af50bfef7a6c3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 77396.99
+      value: 77396.48
       objectReference: {fileID: 0}
     - target: {fileID: 5878347908735270439, guid: 01f3c4cd5fc2d984a81af50bfef7a6c3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3755,8 +3755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0292c4f7ec35b944faa3cc5e9362ac21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 3
-  livesText: {fileID: 1545834384}
+  strokeText: {fileID: 1545834384}
 --- !u!4 &777728953
 Transform:
   m_ObjectHideFlags: 0
@@ -7635,7 +7634,7 @@ GameObject:
   - component: {fileID: 1545834385}
   - component: {fileID: 1545834384}
   m_Layer: 5
-  m_Name: LifeText
+  m_Name: StrokeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7661,7 +7660,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lifes
+  m_text: 'Strokes:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8610,6 +8609,10 @@ PrefabInstance:
       propertyPath: maxPower
       value: 80
       objectReference: {fileID: 0}
+    - target: {fileID: 6377402099074711735, guid: ac12c8222c8e8ad4391e7c663d461260, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 777728952}
     - target: {fileID: 6377402099074711735, guid: ac12c8222c8e8ad4391e7c663d461260, type: 3}
       propertyPath: powerSlider
       value: 

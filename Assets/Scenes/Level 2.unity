@@ -12117,7 +12117,7 @@ GameObject:
   - component: {fileID: 578412669}
   - component: {fileID: 578412668}
   m_Layer: 5
-  m_Name: LifeText
+  m_Name: StrokeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12143,7 +12143,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lifes
+  m_text: 'Strokes: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -12170,7 +12170,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 44.75
+  m_fontSize: 44.2
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -12236,7 +12236,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2.2399902, y: 0}
+  m_AnchoredPosition: {x: -34.62, y: 0}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 1, y: 1}
 --- !u!1 &619541874
@@ -12513,7 +12513,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5878347908735270439, guid: 01f3c4cd5fc2d984a81af50bfef7a6c3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.586
+      value: 0.63
       objectReference: {fileID: 0}
     - target: {fileID: 5878347908735270439, guid: 01f3c4cd5fc2d984a81af50bfef7a6c3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -19878,11 +19878,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6192148288827620976, guid: ac12c8222c8e8ad4391e7c663d461260, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.543
+      value: 0.61
       objectReference: {fileID: 0}
     - target: {fileID: 6192148288827620976, guid: ac12c8222c8e8ad4391e7c663d461260, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -28.294
+      value: -28.36
       objectReference: {fileID: 0}
     - target: {fileID: 6192148288827620976, guid: ac12c8222c8e8ad4391e7c663d461260, type: 3}
       propertyPath: m_LocalRotation.w
@@ -19912,6 +19912,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6377402099074711735, guid: ac12c8222c8e8ad4391e7c663d461260, type: 3}
+      propertyPath: ballRb
+      value: 
+      objectReference: {fileID: 1081227859}
+    - target: {fileID: 6377402099074711735, guid: ac12c8222c8e8ad4391e7c663d461260, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1757681302}
+    - target: {fileID: 6377402099074711735, guid: ac12c8222c8e8ad4391e7c663d461260, type: 3}
+      propertyPath: powerSlider
+      value: 
+      objectReference: {fileID: 1727966568}
+    - target: {fileID: 6377402099074711735, guid: ac12c8222c8e8ad4391e7c663d461260, type: 3}
+      propertyPath: ballTransform
+      value: 
+      objectReference: {fileID: 1081227863}
     - target: {fileID: 7389411305159379152, guid: ac12c8222c8e8ad4391e7c663d461260, type: 3}
       propertyPath: m_Name
       value: Club
@@ -23249,6 +23265,16 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13f4ab088e68ba44584d0758ac1d373e, type: 3}
+--- !u!54 &1081227859 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 6217986860754918167, guid: 01f3c4cd5fc2d984a81af50bfef7a6c3, type: 3}
+  m_PrefabInstance: {fileID: 627417123}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1081227863 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5878347908735270439, guid: 01f3c4cd5fc2d984a81af50bfef7a6c3, type: 3}
+  m_PrefabInstance: {fileID: 627417123}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1082092491
 Mesh:
   m_ObjectHideFlags: 0
@@ -40246,8 +40272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0292c4f7ec35b944faa3cc5e9362ac21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 3
-  livesText: {fileID: 578412668}
+  strokeText: {fileID: 578412668}
 --- !u!4 &1757681303
 Transform:
   m_ObjectHideFlags: 0
