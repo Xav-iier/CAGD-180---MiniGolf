@@ -43,10 +43,10 @@ public class ColorChanger : MonoBehaviour
 
         if (objs.Length > 1)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
 
-        DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame
