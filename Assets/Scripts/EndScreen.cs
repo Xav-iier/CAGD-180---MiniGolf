@@ -9,6 +9,7 @@ public class EndScreen : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+        print("Quit The Game");
     }
     public void MainMenu(int sceneIndex)
     {
