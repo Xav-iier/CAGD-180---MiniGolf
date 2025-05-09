@@ -437,10 +437,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6217986860754918167, guid: 01f3c4cd5fc2d984a81af50bfef7a6c3, type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6788391564671777631, guid: 01f3c4cd5fc2d984a81af50bfef7a6c3, type: 3}
       propertyPath: m_Name
       value: GolfBall
@@ -448,10 +444,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6788391564671777631, guid: 01f3c4cd5fc2d984a81af50bfef7a6c3, type: 3}
-      insertIndex: 4
-      addedObject: {fileID: 1273557588}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01f3c4cd5fc2d984a81af50bfef7a6c3, type: 3}
 --- !u!1 &523031969
 GameObject:
@@ -2311,44 +2304,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1260133753}
   m_CullTransparentMesh: 1
---- !u!1 &1273557587 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6788391564671777631, guid: 01f3c4cd5fc2d984a81af50bfef7a6c3, type: 3}
+--- !u!114 &1273557588 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7892579104109824676, guid: 01f3c4cd5fc2d984a81af50bfef7a6c3, type: 3}
   m_PrefabInstance: {fileID: 493498994}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1273557588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1273557587}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a6e1fe5cccb1ba45b50e902c6b5c131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  golfball: {fileID: 1273557587}
-  ColorRed: {r: 1, g: 0, b: 0, a: 0}
-  ColorOrange: {r: 1, g: 0.6039216, b: 0, a: 0}
-  ColorYellow: {r: 0.99215686, g: 1, b: 0, a: 0}
-  ColorGreen: {r: 0, g: 0.6313726, b: 0.06666667, a: 0}
-  ColorBlue: {r: 0, g: 0.7294118, b: 1, a: 0}
-  ColorPurple: {r: 0.61960787, g: 0, b: 0.7254902, a: 0}
-  ColorPink: {r: 1, g: 0, b: 0.7490196, a: 0}
-  ColorWhite: {r: 1, g: 1, b: 1, a: 0}
-  ColorGray: {r: 0.59607846, g: 0.59607846, b: 0.59607846, a: 0}
-  ColorBlack: {r: 0, g: 0, b: 0, a: 0}
-  red: 0
-  orange: 0
-  yellow: 0
-  green: 0
-  blue: 0
-  purple: 0
-  pink: 0
-  white: 0
-  gray: 0
-  black: 0
 --- !u!1 &1318223443
 GameObject:
   m_ObjectHideFlags: 0

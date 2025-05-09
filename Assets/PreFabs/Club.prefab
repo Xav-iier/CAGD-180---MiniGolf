@@ -339,11 +339,12 @@ MonoBehaviour:
   rotationSpeed: 0.8
   club: {fileID: 6192148288827620976}
   clubPivot: {fileID: 7256167992296495617}
-  ballRb: {fileID: 0}
-  maxPower: 20
+  ballRb: {fileID: 6217986860754918167, guid: 01f3c4cd5fc2d984a81af50bfef7a6c3, type: 3}
+  maxPower: 70
   chargeSpeed: 20
   camFollow: {fileID: 3941873532814753990}
-  ballTransform: {fileID: 0}
+  ballTransform: {fileID: 5878347908735270439, guid: 01f3c4cd5fc2d984a81af50bfef7a6c3, type: 3}
   clubTransform: {fileID: 6192148288827620976}
+  gameManager: {fileID: 0}
   maxSwingBackAngle: 60
   powerSlider: {fileID: 0}
