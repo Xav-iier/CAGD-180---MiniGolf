@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 3.unity
     guid: 25f4c0a5ade7fb44ba05b9e9dd7ae74c
+  - enabled: 1
+    path: Assets/Scenes/Controls.unity
+    guid: b1fbe4ba0a2c10d4fa08641ff2624c72
+  - enabled: 1
+    path: Assets/Scenes/ColorPicker.unity
+    guid: 13afe8d8d7362524e913d7ccf5653aa5
   m_configObjects: {}
