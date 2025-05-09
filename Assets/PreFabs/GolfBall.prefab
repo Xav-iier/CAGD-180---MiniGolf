@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -133,6 +133,8 @@ MonoBehaviour:
   ColorBlack: {r: 0, g: 0, b: 0, a: 0}
   ballColor: 7
   GolfBallLocation: {fileID: 5791116324843447312, guid: 9e8ae53776e90074492267b7edf607cf, type: 3}
+  colorPickerBall: {fileID: 0}
+  golfBall: {fileID: 0}
 --- !u!54 &6217986860754918167
 Rigidbody:
   m_ObjectHideFlags: 0

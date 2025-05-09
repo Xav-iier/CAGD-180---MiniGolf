@@ -441,6 +441,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: GolfBall
       objectReference: {fileID: 0}
+    - target: {fileID: 7892579104109824676, guid: 01f3c4cd5fc2d984a81af50bfef7a6c3, type: 3}
+      propertyPath: golfBall
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7892579104109824676, guid: 01f3c4cd5fc2d984a81af50bfef7a6c3, type: 3}
+      propertyPath: colorPickerBall
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

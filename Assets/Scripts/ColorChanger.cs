@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 /* Joshua Holdenried
  * This script allows the player to change the color of their golf ball
  * First Updated: 5/6/25
- * Last Updated: 5/8/25
+ * Last Updated: 5/9/25
  */
 
 public enum BallColor
@@ -42,26 +42,37 @@ public class ColorChanger : MonoBehaviour
     public BallColor ballColor;
     public Transform GolfBallLocation;
 
+
+
     public void MainMenu(int sceneIndex)
     {
         SceneManager.LoadScene(1);
     }
     void Awake()
     {
+       /*
         GameObject[] objs = GameObject.FindGameObjectsWithTag("Ball");
-
+       
         if (objs.Length > 1)
         {
             Destroy(this.gameObject);
         }
 
         transform.position = GolfBallLocation.position;
-        
+       */
         DontDestroyOnLoad(this.gameObject);
     }
 
-    private void Start()
+      private void Start()
     {
+        /*
+        Renderer renderer = GetComponent<Renderer>();
+        if (renderer != null)
+        {
+            renderer.material.color = ballColor;
+        }
+        */
+
         switch (ballColor)
         {
             case BallColor.red:
