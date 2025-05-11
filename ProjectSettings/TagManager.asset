@@ -8,6 +8,7 @@ TagManager:
   - Hole
   - Club
   - Hazard
+  - portal
   layers:
   - Default
   - TransparentFX

@@ -29,6 +29,7 @@ public class ClubController : MonoBehaviour
     public Transform clubTransform;
 
     public GameManger gameManager;
+    public BallController ballController;
 
     // Swing animation
     public float maxSwingBackAngle = 60f; // Maximum angle the club swings back
@@ -92,6 +93,7 @@ public class ClubController : MonoBehaviour
         }
         gameManager.AddStroke();
 
+        ballController.RecordShotPosition();
         if (camFollow != null)
         {
             camFollow.followRotation = false;

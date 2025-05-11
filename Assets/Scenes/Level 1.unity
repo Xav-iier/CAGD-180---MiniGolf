@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1305,6 +1305,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &126289323 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1449570913085384226, guid: 01f3c4cd5fc2d984a81af50bfef7a6c3, type: 3}
+  m_PrefabInstance: {fileID: 358806124}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2580c3c576673344081f47fde74adc3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &136828188
 Mesh:
   m_ObjectHideFlags: 0
@@ -8279,6 +8290,10 @@ PrefabInstance:
       propertyPath: ballTransform
       value: 
       objectReference: {fileID: 5878347908735270439, guid: 01f3c4cd5fc2d984a81af50bfef7a6c3, type: 3}
+    - target: {fileID: 6377402099074711735, guid: ac12c8222c8e8ad4391e7c663d461260, type: 3}
+      propertyPath: ballController
+      value: 
+      objectReference: {fileID: 126289323}
     - target: {fileID: 7389411305159379152, guid: ac12c8222c8e8ad4391e7c663d461260, type: 3}
       propertyPath: m_Name
       value: Club

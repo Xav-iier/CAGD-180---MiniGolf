@@ -28,19 +28,22 @@ public class BallController : MonoBehaviour
     }
     void FixedUpdate()
     {
-        // Move();
+      
         // Check if the ball falls below the kill height
         if (transform.position.y < killHeight)
         {
             KillPlayer();
         }
     }
-    
-   
+
+    public void RecordShotPosition()
+    {
+        lastShotPosition = transform.position;
+    }
 
 
 
-      public void KillPlayer()
+    public void KillPlayer()
     {
         //  Count this as a penalty stroke (or two, if you prefer) 
         if (gameManager != null)
